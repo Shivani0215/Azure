@@ -8,8 +8,8 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: UseAWSConnection@1
-  inputs:
-    awsConnection: 'aws_service'  # Replace with the name of your AWS service connection
-    scriptType: 'inline'
-    inlineScript: 'aws s3 ls'
+- script: |
+    aws configure set aws_access_key_id AKIAQ376YBZEPMABT4UZ
+    aws configure set aws_secret_access_key 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
+    aws s3 ls
+  displayName: 'List S3 Buckets'
