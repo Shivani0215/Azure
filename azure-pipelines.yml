@@ -1,8 +1,6 @@
 trigger:
 - master
 
-pr:
-- '*'
 
 pool:
   name: Default
@@ -11,5 +9,10 @@ steps:
 - script: |
     aws configure set aws_access_key_id AKIAQ376YBZEPMABT4UZ
     aws configure set aws_secret_access_key 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
+    aws configure set region ap-south-1
+  displayName: 'Configure AWS CLI'
+
+- script: |
     aws s3 ls
-  displayName: 'List S3 Buckets'
+  displayName: 'List AWS S3 Buckets'
+
