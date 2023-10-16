@@ -10,6 +10,6 @@ pool:
 steps:
 - task: UseAWSConnection@1
   inputs:
-    awsConnection: 'YourAWSServiceConnection'  # Replace with the name of your AWS service connection
+    awsConnection: 'aws_service'  # Replace with the name of your AWS service connection
     scriptType: 'inline'
     inlineScript: 'aws s3 ls'
