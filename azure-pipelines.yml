@@ -1,16 +1,15 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
-- main
+- master
+
+pr:
+- '*'
 
 pool:
-  name: Default
+  vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-
+- task: UseAWSConnection@1
+  inputs:
+    awsConnection: 'YourAWSServiceConnection'  # Replace with the name of your AWS service connection
+    scriptType: 'inline'
+    inlineScript: 'aws s3 ls'
