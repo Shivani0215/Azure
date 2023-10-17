@@ -10,9 +10,6 @@ steps:
     aws configure set aws_secret_access_key $(AWS_SECRET_ACCESS_KEY)
     aws configure set region ap-south-1
   displayName: 'Configure AWS CLI'
-#- script: |
-#    aws s3 ls
-#  displayName: 'List AWS S3 Buckets'
 env:
   AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
   AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
