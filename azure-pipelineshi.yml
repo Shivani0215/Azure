@@ -11,10 +11,6 @@ steps:
     aws configure set region ap-south-1
   displayName: 'Configure AWS CLI'
 
-env:
-  AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
-  AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
-
 - task: AWSShellScript@1
   inputs:
     awsCredentials: 'aws_service'
