@@ -3,7 +3,7 @@ trigger:
 - master
 
 pool:
-  name: Default
+  vmImage: 'ubuntu-latest'
 steps:
 - script: |
     aws configure set aws_access_key_id $(AWS_ACCESS_KEY_ID)
